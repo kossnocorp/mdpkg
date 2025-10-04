@@ -1,4 +1,4 @@
-FROM kossnocorp/dev-rust:latest
+FROM kossnocorp/dev-node:latest
 
 # Ensure directories to mount into.
 RUN mkdir -p "$HOME/.config/mothership" && \

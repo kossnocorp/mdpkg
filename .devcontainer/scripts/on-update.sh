@@ -43,3 +43,5 @@ fi
 if [ -f ./Cargo.lock ]; then
   cargo build || echo "🟡 Cargo build failed, but that's ok"
 fi
+
+./scripts/setup.sh

@@ -1,2 +1,4 @@
 # Temp
 tmp/
+# VS Code
+/mdpkg.code-workspace
