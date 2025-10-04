@@ -1,0 +1,31 @@
+[tools]
+# Stack
+rust = "1.90"
+node = { version = "lts", postinstall = "corepack enable" }
+
+# Tools
+cargo-binstall = "latest"        # Install Rust-based binaries instead of compiling
+"cargo:watchexec-cli" = "latest" # File watcher
+"cargo:cargo-insta" = "latest"   # Snapshot testing
+"npm:@openai/codex" = "latest"   # OpenAI Codex CLI
+"npm:prettier" = "latest"        # Code formatter
+"cargo:genotype_cli" ="latest"   # Meta language for cross-language types generation
+
+[settings]
+experimental = true # Enable extra features
+cargo.binstall = true # Enable cargo binstall
+idiomatic_version_file_enable_tools = [
+  "rust",
+] # Consume Rust toolchain settings from rust-toolchain.toml
+
+[tasks.setup]
+description = "Setup development environment"
+run = "./scripts/setup.sh"
+
+[tasks.lint]
+description = "Lint code style"
+run = "cargo clippy --all-features -- -D warnings"
+
+[tasks.fix]
+description = "Fix code style issues"
+run = "cargo clippy --fix --all-features --allow-dirty"
