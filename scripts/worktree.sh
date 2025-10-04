@@ -61,15 +61,6 @@ new() {
   echo -e "🌀 Setting up environment"
   ./.devcontainer/scripts/on-update.sh
 
-  echo -e "🌀 Copying secrets"
-  secrets=(
-    ".env.local"
-    "pkgs/gateway/.env.local"
-  )
-  for secret in "$secrets"; do
-    cp -r "$root_repo_dir/$secret" "$worktree_dir/$secret"
-  done
-
   add_worktree_to_workspace "$worktree_name"
 
   echo -e "\n💚 Worktree created!"

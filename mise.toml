@@ -6,6 +6,8 @@ node = { version = "lts", postinstall = "corepack enable" }
 # Tools
 cargo-binstall = "latest"        # Install Rust-based binaries instead of compiling
 "cargo:watchexec-cli" = "latest" # File watcher
+# TODO: Will include with latest Mothership image, so can remove after updating
+"cargo:jaq" = "latest"
 "cargo:cargo-insta" = "latest"   # Snapshot testing
 "npm:@openai/codex" = "latest"   # OpenAI Codex CLI
 "npm:prettier" = "latest"        # Code formatter
